@@ -86,7 +86,32 @@ function mapa() {
 }
 function rozejrzyj() {
   // TODO A4: switch(pokoj); opis zgodny ze stanem przedmiotow.
-  console.log("Opis pokoju do uzupelnienia");
+  switch (pokoj) {
+    case 1: {
+      if (!karta) console.log("Karta leży na biurku");
+      else console.log("W tym pomieszczeniu nie ma już nic ciekawego");
+      break;
+    }
+    case 2: {
+      if (!bezpiecznik && !zasilanie) console.log("Bezpiecznik leży na półce");
+      else console.log("W tym pomieszczeniu nie ma już nic ciekawego");
+      break;
+    }
+    case 3: {
+      if (zasilanie) console.log("Zasilanie działa");
+      else console.log("Zasilanie nie działa");
+      break;
+    }
+    case 4: {
+      if (zasilanie && karta)
+        console.log("Najwidoczniej wszystko znów działa, możesz wyjść");
+      else
+        console.log(
+          "Musisz przywrócić znów prąd i posiadać kartę aby opuścić szkołę",
+        );
+      break;
+    }
+  }
 }
 
 // SEKCJA B — RUCH
