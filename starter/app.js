@@ -56,7 +56,10 @@ function nazwaPokoju(numer) {
 }
 function pomoc() {
   console.log(
-    'Dostepne: start(), pomoc(), status(), mapa(), rozejrzyj(), idz("prawo"), akcja("karta")',
+    'Dostepne: start(), pomoc(), status(), mapa(), rozejrzyj(), idz("prawo"), idz("lewo"), akcja("karta"), akcja("bezpiecznik"), akcja("napraw"), akcja("wyjdz")',
+  );
+  console.log(
+    "Energie tracisz tylko i wyłacznie wtedy kiedy zrobisz ruch albo wykonasz akcje, jeżeli ruch bedzię prowadził do nikąd, nie tracisz energi.",
   );
   // TODO A5: dopisz pozostale kierunki i akcje oraz zasade kosztu.
 }
