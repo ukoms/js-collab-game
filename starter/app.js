@@ -123,7 +123,32 @@ function idz(kierunek) {
   // TODO B2: switch kierunku; oblicz kandydat na nowy pokoj.
   // TODO B3: odrzuc pokoj poza 1..4 i nieznany kierunek bez kosztu.
   // TODO B4: zapisz poprawny pokoj, rozejrzyj(), zakonczTure().
-  console.log("Ruch do uzupelnienia");
+
+  if (koniec) {
+    console.log("Gra została zakończona");
+    return;
+  }
+  let nastepnyPokoj = pokoj;
+  switch (kierunek) {
+    case "prawo": {
+      nastepnyPokoj++;
+      break;
+    }
+    case "lewo": {
+      nastepnyPokoj--;
+      break;
+    }
+    default: {
+      return 'Nieznany kierunek, spróbuj "lewo" albo "prawo"';
+    }
+  }
+  if (nastepnyPokoj < 1 || nastepnyPokoj > 4) {
+    return "Uderzyłeś w ściane, idz w innym kierunku";
+  } else {
+    pokoj = nastepnyPokoj;
+    rozejrzyj();
+    zakonczTure();
+  }
 }
 
 // SEKCJA C — PRZEDMIOTY I WYGRANA
